@@ -1,0 +1,139 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.oy</groupId>
+	<artifactId>MavenTest</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>MavenTest Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+	<repositories>
+		<repository>
+			<id>oschina nexus</id>
+			<name>local private nexus</name>
+			<url>http://maven.oschina.net/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>nexus</id>
+			<name>local private nexus</name>
+			<url>http://maven.oschina.net/content/repositories/thirdparty/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>spring-snapshots</id>
+			<name>Spring Snapshots</name>
+			<url>http://repo.spring.io/snapshot</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>repository.springsource.snapshot</id>
+			<name>SpringSource Snapshot Repository</name>
+			<url>http://repo.springsource.org/snapshot</url>
+		</repository>
+		<repository>
+			<id>spring-libs-snapshots</id>
+			<url>http://repo.spring.io/libs-snapshot</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>nexus</id>
+			<name>local private nexus</name>
+			<url>http://maven.oschina.net/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+		<pluginRepository>
+			<id>spring-snapshots</id>
+			<url>http://repo.spring.io/libs-snapshot</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- 添加servlet3.0核心包 -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>2.3.2-b01</version>
+		</dependency>
+		<!-- jstl -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<!-- 添加spring-context包 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>4.3.5.RELEASE</version>
+		</dependency>
+		<!-- 添加spring-mvc包 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>4.3.5.RELEASE</version>
+		</dependency>
+		<!-- 添加spring-jdbc包 -->
+		<dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>4.3.5.RELEASE</version>
+        </dependency>
+		<!-- 添加mybatis的核心包 -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.2.8</version>
+		</dependency>
+		<!-- 添加mybatis与Spring整合的核心包 -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>1.2.2</version>
+		</dependency>
+		<!-- 添加druid连接池包 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.0.12</version>
+        </dependency>
+	</dependencies>
+	<build>
+		<finalName>MavenTest</finalName>
+	</build>
+</project>
