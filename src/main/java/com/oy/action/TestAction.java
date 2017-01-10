@@ -9,7 +9,6 @@ public class TestAction {
 
 	@RequestMapping(value = "/World")
 	public String sayHelloWorld() {
-		System.out.println("Hello World");
 		return "hello";
 	}
 
