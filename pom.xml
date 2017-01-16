@@ -114,6 +114,18 @@
             <artifactId>spring-jdbc</artifactId>
             <version>4.3.5.RELEASE</version>
         </dependency>
+        <!-- 为了方便进行单元测试，添加spring-test包 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>4.3.5.RELEASE</version>
+        </dependency>
+        <!--添加aspectjweaver包 -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.8.5</version>
+        </dependency>
 		<!-- 添加mybatis的核心包 -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
@@ -131,6 +143,12 @@
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
             <version>1.0.12</version>
+        </dependency>
+        <!-- 添加mysql驱动包 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.34</version>
         </dependency>
 	</dependencies>
 	<build>

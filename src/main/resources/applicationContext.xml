@@ -15,7 +15,7 @@
 	<mvc:annotation-driven />
 
     <!-- 引入dbconfig.properties属性文件 -->
-    <!-- <context:property-placeholder location="classpath:db.properties" /> -->
+    <context:property-placeholder location="classpath:dbconfig.properties" />
     
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="internalResourceViewResolver">
 		<!-- 前缀 -->
@@ -24,6 +24,6 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 	
-	<!-- <import resource="spring-mybatis.xml"/>-->
+	<import resource="spring-mybatis.xml"/>
 </beans>
 
