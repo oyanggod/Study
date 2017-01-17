@@ -16,8 +16,10 @@
 
     <!-- 引入dbconfig.properties属性文件 -->
     <context:property-placeholder location="classpath:dbconfig.properties" />
-    
+    <!-- 由Spring MVC框架自己处理静态资源，并添加一些有用的附加值功能 -->
     <mvc:resources location="/script/" mapping="/script/**" />
+    <!-- 如果发现是静态资源的请求，就将该请求转由Web应用服务器默认的Servlet处理 -->
+    <mvc:default-servlet-handler/> 
     
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="internalResourceViewResolver">
 		<!-- 前缀 -->
