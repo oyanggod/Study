@@ -11,7 +11,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.oy.entity.User;
 import com.oy.service.UserService;
 
-public class MybatisTest {
+public class JunitTest {
 	private UserService userService;
 	
 	@Before

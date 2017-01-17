@@ -1,5 +1,7 @@
 package com.oy.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +21,11 @@ public class UserServiceImpl implements UserService {
 	public User getUserById(String userId) {
 		User user = userDao.getUserById(userId);
 		return user;
+	}
+
+	public List<User> getAllUsers() {
+		List<User> users = userDao.getAllUsers();
+		return users;
 	}
 
 }

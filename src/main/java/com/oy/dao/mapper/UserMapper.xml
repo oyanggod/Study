@@ -7,5 +7,8 @@
   <select id="getUserById" parameterType="java.lang.String" resultType="com.oy.entity.User">
   		SELECT userId, userName, birthday, salary FROM USER WHERE userId=#{userId}
   </select>
+  <select id="getAllUsers" parameterType="java.lang.String" resultType="com.oy.entity.User">
+  		SELECT userId, userName, birthday, salary FROM USER
+  </select>
   
 </mapper>

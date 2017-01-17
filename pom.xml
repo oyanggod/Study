@@ -73,10 +73,11 @@
 		</pluginRepository>
 	</pluginRepositories>
 	<dependencies>
+		<!-- spring-test需要4.12及以上版本 -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.8</version>
+			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
 		<!-- 添加servlet3.0核心包 -->

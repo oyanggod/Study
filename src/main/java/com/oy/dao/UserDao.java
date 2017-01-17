@@ -1,5 +1,7 @@
 package com.oy.dao;
 
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
 import com.oy.entity.User;
@@ -8,4 +10,5 @@ import com.oy.entity.User;
 public interface UserDao {
 	int insertUser(User user);
 	User getUserById(String id);
+	List<User> getAllUsers();
 }
