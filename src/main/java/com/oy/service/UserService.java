@@ -4,4 +4,5 @@ import com.oy.entity.User;
 
 public interface UserService {
 	void insertUser(User user);
+	User getUserById(String userId);
 }

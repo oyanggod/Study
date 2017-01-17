@@ -4,4 +4,8 @@
   <insert id="insertUser" parameterType="com.oy.entity.User">
 		INSERT INTO USER(userId, userName, birthday, salary) VALUES (#{userId},#{userName},#{birthday},#{salary})
   </insert>
+  <select id="getUserById" parameterType="java.lang.String" resultType="com.oy.entity.User">
+  		SELECT userId, userName, birthday, salary FROM USER WHERE userId=#{userId}
+  </select>
+  
 </mapper>

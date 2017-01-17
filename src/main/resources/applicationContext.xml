@@ -17,6 +17,8 @@
     <!-- 引入dbconfig.properties属性文件 -->
     <context:property-placeholder location="classpath:dbconfig.properties" />
     
+    <mvc:resources location="/script/" mapping="/script/**" />
+    
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="internalResourceViewResolver">
 		<!-- 前缀 -->
 		<property name="prefix" value="/WEB-INF/jsp/" />
