@@ -25,6 +25,7 @@ public class TestAction {
 	public ModelAndView getUserById(@RequestParam(value = "userId") String userId){
 		ModelAndView mv = new ModelAndView("user");
 		User user = userService.getUserById(userId);
+		//sss
 		mv.addObject(user);
 		return mv;
 	}
