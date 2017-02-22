@@ -29,5 +29,13 @@
 	</bean>
 	
 	<import resource="spring-mybatis.xml"/>
+
+	<bean id="person" name="person" class="com.oy.entity.Person">
+		<property name="name" value="shana"></property>
+		<property name="age" value="29"></property>
+	</bean>
+	<bean id="login" name="loginaction" class="com.oy.action.LoginAction">
+		<property name="personShana" ref="person"></property>
+	</bean>
 </beans>
 
