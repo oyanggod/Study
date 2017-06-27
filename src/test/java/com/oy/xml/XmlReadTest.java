@@ -66,7 +66,7 @@ public class XmlReadTest {
 		}
 	}
 
-	@Test
+//	@Test
 	public void testJdom() {
 		try {
 			SAXBuilder builder = new SAXBuilder();
@@ -100,6 +100,10 @@ public class XmlReadTest {
 		} catch (DocumentException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	@Test
+	public void testEverything(){
 	}
 }
 

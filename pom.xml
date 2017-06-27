@@ -191,6 +191,12 @@
 		    <artifactId>jdom</artifactId>
 		    <version>1.0</version>
 		</dependency>
+		<!-- 消息控件 -->
+		<dependency>
+		    <groupId>org.apache.activemq</groupId>
+		    <artifactId>activemq-core</artifactId>
+		    <version>5.7.0</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>MavenTest</finalName>
