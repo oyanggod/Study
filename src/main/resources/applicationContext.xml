@@ -37,5 +37,8 @@
 	<bean id="login" name="loginaction" class="com.oy.action.LoginAction">
 		<property name="personShana" ref="person"></property>
 	</bean>
+	
+<!-- 	<bean id="httpInter" name="httpInter" class="com.oy.action.HttpInterface">
+	</bean> -->
 </beans>
 

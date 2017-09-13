@@ -11,12 +11,12 @@ import com.oy.entity.User;
 import com.oy.service.UserService;
 
 @Controller
-@RequestMapping(value = "/Hello")
+@RequestMapping(value = "/httpInter")
 public class TestAction {
 	@Autowired
 	private UserService userService;
 	
-	@RequestMapping(value = "/World")
+	@RequestMapping(value = "/httpInter_hello")
 	public String sayHelloWorld() {
 		return "hello";
 	}

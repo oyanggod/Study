@@ -1,17 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC
-	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
-	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
-	<constant name="struts.devMode" value="true"></constant>
+<!-- 	<constant name="struts.devMode" value="true"></constant>
 	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
 	<constant name="struts.locale" value="zh_CN"></constant>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+	<constant name="struts.configuration.xml.reload" value="true"></constant> -->
+	
+	
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.multipart.saveDir" value="c:/tmp " />
+    <constant name="struts.ui.theme" value="simple" />  
+    <constant name="struts.ui.templateDir" value="template" />  
+    <constant name="struts.ui.templateSuffix" value="ftl" />
+    <constant name="struts.multipart.maxSize" value="10240000"/>
+    <constant name="struts.configuration.xml.reload" value="true" />
+    <constant name="struts.serve.static.browserCache" value="false" />
+    <constant name="struts.devMode" value="true" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+	<constant name="struts.convention.action.mapallmatches" value="true"/>
+	<constant name="struts.excludedPackageNamePatterns" value="^java\.lang\..*,^ognl.*,^javax.*" />
 
-	<package name="hurricane" extends="struts-default">
+	<package name="actions" extends="struts-default">
 		<action name="login" class="login">
 			<result>
 				index.jsp
 			</result>
+		</action>
+	</package>
+	
+ 	<package name="httpInter" namespace="/httpInter" extends="struts-default">
+ 		<global-allowed-methods>regex:.*</global-allowed-methods>
+		<action name="httpInter_*" class="HttpInterface" method="{1}">
+		</action>
+	</package>
+	
+ 	<package name="hi" namespace="/httpInter" extends="struts-default">
+		<action name="hi" class="HttpInterface" method="hi">
 		</action>
 	</package>
 </struts>
