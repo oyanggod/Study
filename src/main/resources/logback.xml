@@ -1,0 +1,61 @@
+<configuration scan="true" scanPeriod="5 seconds"><!-- 自动扫描配置更改， 5秒 -->
+    <contextName>MavenTest</contextName><!-- 上下文名称 -->
+    <jmxConfigurator/>
+    <!-- direct log messages to stdout -->
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <Target>System.out</Target>
+        <encoder>
+            <!-- <pattern>%d{HH:mm:ss.SSS} [%t] %5p |-%c{35}:%L - %m %n</pattern> -->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger -%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender"><!-- 滚动记录日志文件 -->
+        <file>${catalina.base}/logs/MavenTest.log</file><!-- 活动文件 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${catalina.base}/logs/bak/MavenTest.%d{yyyy-MM-dd}.%i.log.gz</FileNamePattern><!-- 归档文件 -->
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>1MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>7</maxHistory><!-- 保留的归档文件的最大数量 -->
+        </rollingPolicy>
+        <encoder>
+            <!-- <pattern>%d{HH:mm:ss.SSS} [%t] %highlight(%5p) %green(|-%c{35}:%L) - %m %n</pattern> -->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger -%msg%n</pattern>
+        </encoder>
+    </appender>
+    
+    <appender name="errorFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${catalina.base}/logs/MerchantAdmin-error.log</file>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${catalina.base}/logs/bak/MavenTest-error.%d{yyyy-MM-dd}.log.gz</FileNamePattern>
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <!-- <pattern>%d{HH:mm:ss.SSS} [%t] %5p |-%c{35}:%L - %m %n</pattern> -->
+             <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger -%msg%n</pattern>
+        </encoder>
+    </appender>
+    
+<!--     <logger name="com.threeweidu" level="INFO"/>
+    <logger name="java.sql" level="INFO"/>
+    <logger name="org.springframework" level="WARN" /> --><!-- 设置包或者类的打印级别 -->
+    
+    <appender name="ASYNC" class="ch.qos.logback.classic.AsyncAppender">
+        <includeCallerData>true</includeCallerData>
+        <appender-ref ref="file"/>
+    </appender>
+
+	<!-- 设置日志打印级别 -->
+    <root level="DEBUG">
+        <appender-ref ref="stdout" />
+        <appender-ref ref="ASYNC"/>
+        <appender-ref ref="errorFile"/>
+    </root>
+</configuration>

@@ -1,5 +1,7 @@
 package com.oy.action;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,11 +15,18 @@ import com.oy.service.UserService;
 @Controller
 @RequestMapping(value = "/httpInter")
 public class TestAction {
+	private static final Logger logger = LoggerFactory.getLogger(TestAction.class);
 	@Autowired
 	private UserService userService;
 	
 	@RequestMapping(value = "/httpInter_hello")
 	public String sayHelloWorld() {
+//		for (int i = 0; i < 10000; i++) {
+			logger.debug("debug...");
+			logger.info("info...");
+			logger.warn("warn...");
+			logger.error("error...");
+//		}
 		return "hello";
 	}
 
