@@ -10,7 +10,7 @@ import javax.jms.TextMessage;
 import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
 /**
- * 消息的生产者（发送者） 
+ * 消息的生产者（发送者）该示例为点对点方式 需要先启动ActiveMQ bin\win64\activemq.bat
  * @author liang
  *
  */

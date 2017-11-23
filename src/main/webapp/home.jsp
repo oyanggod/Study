@@ -22,10 +22,9 @@
 </head>
 <body>
 	<div>
-		<form id="form1" action="Hello/getUserById">
+		<form id="form1" action="httpInter/getUserById">
 			<table>
 				<tr>
-					<td>用户id:</td>
 					<td><input id="userId" name="userId" type="text" /></td>
 					<td><input type="button" value="查询" onclick="getUserById();"></td>
 				</tr>

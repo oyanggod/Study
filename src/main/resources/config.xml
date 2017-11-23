@@ -20,6 +20,5 @@
     <mappers>
     	<mapper resource="com/oy/mapping/userMapper.xml"></mapper>
     	<mapper resource="com/oy/mapping/classMapper.xml"></mapper>
-    	<mapper class="com.oy.mapping.UserMapperI"></mapper>
     </mappers>
 </configuration>
